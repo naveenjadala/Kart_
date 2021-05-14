@@ -9,7 +9,7 @@ const CheckOutScreen = () => {
 
     const total = () => {
         let totalValue = 0;
-        stateData.testReducertwo.selectedProducts.map((item, key) => (
+        stateData.cartReducer.selectedProducts.map((item, key) => (
             totalValue += item.quantity * item.price
         ));
         return totalValue + 100;
@@ -24,7 +24,7 @@ const CheckOutScreen = () => {
                         <Text>Quantity</Text>
                         <Text>Price</Text>
                     </View>
-                    {stateData.testReducertwo.selectedProducts.map((item, key) => (
+                    {stateData.cartReducer.selectedProducts.map((item, key) => (
                         <View style={{ ...styles.space_ , padding: 10 }} key={key}>
                             <Text style={{ ...styles.prod }}>{item.name}</Text>
                             <Text>{item.quantity}</Text>

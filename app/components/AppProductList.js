@@ -22,7 +22,7 @@ const AppProductList = () => {
         )));
     };
 
-    // console.log(stateData.testReducertwo);
+    // console.log(stateData.cartReducer);
 
     // const renderSubProdData = ({ item }) => (
     //     <View style={{ margin: 10 }}>
@@ -64,7 +64,7 @@ const AppProductList = () => {
                                 <Text>₹{item.price}</Text>
                             </View>
                             <View>
-                                <AppAdd item={item} k={key} inCart={stateData.testReducertwo.selectedProducts.length > 0 && stateData.testReducertwo.selectedProducts.filter(e => e.id === item.id).length > 0} />
+                                <AppAdd item={item} k={key} inCart={stateData.cartReducer.selectedProducts.length > 0 && stateData.cartReducer.selectedProducts.filter(e => e.id === item.id).length > 0} />
                             </View>
                         </View>
                     </View>

@@ -13,16 +13,13 @@ const HomeScreen = props => {
     const dispatch = useDispatch();
     useEffect(() => {
         const loadSpots = async () => {
-            // setIsLoading(true);
             await dispatch(fetchSpots());
-            // setIsLoading(false);
         };
         loadSpots();
     }, [dispatch]);
 
 
     return (
-        // <ScrollView>
             <View style={{
                 flex: 1,
                 justifyContent: 'flex-end',
@@ -38,10 +35,9 @@ const HomeScreen = props => {
                     <AppProductList />
                 </View>
                 <View>
-                    {stateData.testReducertwo.selectedProducts.length > 0 ? <Button title="checkout" onPress={() => props.navigation.navigate('payemtScreen')} /> : null}
+                    {stateData.cartReducer.selectedProducts.length > 0 ? <Button title="checkout" onPress={() => props.navigation.navigate('payemtScreen')} /> : null}
                 </View>
             </View>
-        // </ScrollView>
     );
 };
 

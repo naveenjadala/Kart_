@@ -24,17 +24,17 @@ const AppAdd = props => {
             data.name,
             data.price,
             data.id,
-            stateData.testReducertwo.selectedProducts.filter(e => e.id === data.id)[0].quantity + 1
+            stateData.cartReducer.selectedProducts.filter(e => e.id === data.id)[0].quantity + 1
         )));
     };
 
     const removeprod = (data) => {
-        if (stateData.testReducertwo.selectedProducts.filter(e => e.id === data.id)[0].quantity - 1 == 0) {
+        if (stateData.cartReducer.selectedProducts.filter(e => e.id === data.id)[0].quantity - 1 == 0) {
             dispatch(removeFromCart(new SelectedProds(
                 data.name,
                 data.price,
                 data.id,
-                stateData.testReducertwo.selectedProducts.filter(e => e.id === data.id)[0].quantity - 1
+                stateData.cartReducer.selectedProducts.filter(e => e.id === data.id)[0].quantity - 1
             )));
         }
         else {
@@ -42,7 +42,7 @@ const AppAdd = props => {
                 data.name,
                 data.price,
                 data.id,
-                stateData.testReducertwo.selectedProducts.filter(e => e.id === data.id)[0].quantity - 1
+                stateData.cartReducer.selectedProducts.filter(e => e.id === data.id)[0].quantity - 1
             )));
         }
     };
@@ -55,7 +55,7 @@ const AppAdd = props => {
                     style={{ ...styles.qtu_button_style }}>
                     <View style={{ flexDirection: 'row' }}>
                         <Text onPress={() => upDateprod(props.item)} style={{ ...styles.add_text }}>+</Text>
-                        <Text style={{ ...styles.add_text }}>{stateData.testReducertwo.selectedProducts.filter(e => e.id === props.item.id)[0].quantity}</Text>
+                        <Text style={{ ...styles.add_text }}>{stateData.cartReducer.selectedProducts.filter(e => e.id === props.item.id)[0].quantity}</Text>
                         <Text onPress={() => removeprod(props.item)} style={{ ...styles.add_text }}>-</Text>
                     </View>
                 </View>
